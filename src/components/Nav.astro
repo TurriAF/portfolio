@@ -1,0 +1,40 @@
+---
+import { personal } from '../data/portfolio';
+---
+<nav class="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-10 py-4 bg-[#0a0e17]/85 backdrop-blur-md border-b border-cyan-500/10">
+
+  <!-- Logo DA -->
+  <a href="#hero" class="flex items-center gap-2 group no-underline">
+    <div class="relative w-9 h-9">
+      <!-- Cuadrado exterior con borde cian -->
+      <div class="absolute inset-0 rounded border border-cyan-400/40 group-hover:border-cyan-400 transition-colors duration-200"></div>
+      <!-- Cuadrado interior rotado -->
+      <div class="absolute inset-[6px] rounded-sm border border-cyan-400/20 rotate-45 group-hover:border-cyan-400/50 transition-colors duration-200"></div>
+      <!-- Iniciales -->
+      <span class="absolute inset-0 flex items-center justify-center mono text-[0.72rem] font-semibold text-cyan-400 tracking-wider">DA</span>
+    </div>
+    <span class="mono text-[0.78rem] text-slate-500 tracking-wide group-hover:text-slate-300 transition-colors duration-200 hidden sm:block">
+      {personal.name.split(' ').slice(0,2).join(' ')}
+    </span>
+  </a>
+
+  <!-- Links -->
+  <ul class="flex gap-7 list-none">
+    {[
+      { label: "sobre mí",    href: "#sobre-mi"    },
+      { label: "experiencia", href: "#experiencia"  },
+      { label: "skills",      href: "#habilidades"  },
+      { label: "proyectos",   href: "#proyectos"   },
+      { label: "contacto",    href: "#contacto"    },
+    ].map(link => (
+      <li>
+        <a
+          href={link.href}
+          class="mono text-[0.72rem] uppercase tracking-widest text-slate-500 hover:text-cyan-400 transition-colors duration-200"
+        >
+          {link.label}
+        </a>
+      </li>
+    ))}
+  </ul>
+</nav>

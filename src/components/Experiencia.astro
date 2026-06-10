@@ -1,0 +1,28 @@
+---
+import { experience } from '../data/portfolio';
+---
+<section id="experiencia" class="py-24 px-10 max-w-4xl mx-auto">
+  <div class="flex items-center gap-4 mb-12 fade-up">
+    <span class="mono text-[0.75rem] text-cyan-400">04</span>
+    <h2 class="text-[1.7rem] font-semibold tracking-tight">Experiencia</h2>
+    <span class="flex-1 h-px bg-cyan-500/12"></span>
+  </div>
+
+  <div class="relative fade-up">
+    <!-- Línea vertical -->
+    <div class="absolute left-0 top-2 bottom-2 w-px bg-cyan-500/12"></div>
+
+    <div class="space-y-10">
+      {experience.map(item => (
+        <div class="pl-8 relative">
+          <!-- Punto en la línea -->
+          <div class="absolute left-[-4px] top-2 w-2 h-2 rounded-full border-2 border-cyan-400 bg-[#0a0e17]"></div>
+          <div class="mono text-[0.72rem] text-cyan-400 mb-1">{item.date}</div>
+          <div class="text-base font-semibold text-slate-100">{item.role}</div>
+          <div class="text-sm text-slate-400 mb-2">{item.company}</div>
+          <p class="text-sm text-slate-400 leading-relaxed">{item.desc}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

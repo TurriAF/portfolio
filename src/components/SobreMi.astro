@@ -1,0 +1,62 @@
+---
+import { personal } from '../data/portfolio';
+---
+<section id="sobre-mi" class="py-24 px-10 max-w-4xl mx-auto">
+  <div class="flex items-center gap-4 mb-12 fade-up">
+    <span class="mono text-[0.75rem] text-cyan-400">01</span>
+    <h2 class="text-[1.7rem] font-semibold tracking-tight">Sobre mí</h2>
+    <span class="flex-1 h-px bg-cyan-500/12"></span>
+  </div>
+
+  <div class="grid grid-cols-[1fr_260px] gap-14 items-start fade-up">
+    <div class="space-y-4 text-slate-400 leading-relaxed">
+      <p>
+        Técnico Superior en Desarrollo de Aplicaciones Web, donde he adquirido conocimientos sólidos en tecnologías del desarrollo web como HTML, CSS, 
+        JavaScript, PHP, MySQL, Active Directory, así como en programación orientada a objetos con Java. gestión de bases de datos, despliegue de 
+        aplicaciones y desarrollo de interfaces.
+      </p>
+      <p>
+        Actualmente busco mi primera oportunidad profesional en Almería o en remoto,
+        donde poder crecer como desarrollador y aportar desde el primer día.
+      </p>
+    </div>
+
+    <div class="space-y-5">
+      <!-- Foto -->
+      <div class="relative">
+        <div class="w-full aspect-square rounded-lg bg-[#151b2e] border border-cyan-500/12 overflow-hidden">
+          <!-- Reemplaza /img/foto.jpg con tu foto real -->
+          <img
+            src="/img/170240934.jpg"
+            alt={`Foto de ${personal.name}`}
+            class="w-full h-full object-cover"
+            onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+          />
+          <!-- Placeholder si no hay foto -->
+          <div class="hidden w-full h-full items-center justify-center mono text-cyan-400/30 text-[0.75rem] tracking-widest uppercase flex-col gap-2">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/>
+            </svg>
+            <span>tu foto aquí</span>
+          </div>
+        </div>
+        <!-- Borde decorativo desplazado -->
+        <div class="absolute -bottom-2 -right-2 w-full h-full rounded-lg border border-cyan-400/25 -z-10"></div>
+      </div>
+
+      <!-- Info rápida -->
+      <div class="bg-[#151b2e] border border-cyan-500/12 rounded-lg p-5 space-y-4">
+        {[
+          { label: "Ubicación",  value: personal.location },
+          { label: "Formación",  value: "DAW — Desarrollo de Aplicaciones Web" },
+          { label: "Buscando",   value: "Posición junior / prácticas" },
+        ].map(item => (
+          <div>
+            <div class="mono text-[0.7rem] uppercase tracking-widest text-cyan-400 mb-0.5">{item.label}</div>
+            <div class="text-sm text-slate-300">{item.value}</div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
